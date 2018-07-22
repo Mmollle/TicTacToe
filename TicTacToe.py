@@ -10,7 +10,6 @@ import itertools, sys
 
 #table = [[str(i + 1) for x in range(3)] for y in range(3)]
 table, i = [], 1
-used = [-1]
 
 def main():
     print("Welcome!")
