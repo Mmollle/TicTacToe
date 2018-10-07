@@ -1,18 +1,19 @@
 #
 #   Tic Tac Toe
 #
-#
-#
-#
+#   To do:
+#   Ask the user(s) for and get input about where the user wants to place his X/O
+#   Make it impossible to overwrite an already placed X/O
 #
 
 import itertools, sys
 
 #table = [[str(i + 1) for x in range(3)] for y in range(3)]
 table, i = [], 1
+used = [-1]
 
 def main():
-    print("Welcome!")
+    print("Welcome! This is Tic Tac Toe.")
     isRunning = True
     players = ['X', 'O']
     while isRunning == True:
@@ -26,15 +27,14 @@ def main():
 
             if checkWin(player) == True:
                 printTable()
-                print("The game is won!")
+                print("The game is won! {} won.".format(player))
                 sys.exit()
 
-
+# Creates the table
 for x in range(3):
     for y in range(1):
         table.append([str(i), str(i+1), str(i+2)])
         i = i + 3
-
 
 # Prints the contents of the list table
 def printTable():
@@ -62,8 +62,8 @@ def checkWin(userSymbol):
     for i, x in enumerate(range(3)):
         for j, y in enumerate(range(3)):
             if table[x][y] == userSymbol:
-                xList.append(i)
-                yList.append(j)
+                xList.append(j)
+                yList.append(i)
 
     # Goes through each combination of 3 in xList
     for combinationsX in itertools.combinations(xList, 3):
