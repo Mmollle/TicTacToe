@@ -2,8 +2,8 @@
 #   Tic Tac Toe
 #
 #   To do:
-#   Ask the user(s) for and get input about where the user wants to place his X/O
-#   Make it impossible to overwrite an already placed X/O
+#
+#
 #
 
 import itertools, sys
